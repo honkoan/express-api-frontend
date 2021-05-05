@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react'
 
+import ExerciseItem from './ExerciseItem'
+
 const ExerciseList = () => {
   const [exercises, setExercises] = useState([])
 
@@ -12,7 +14,7 @@ const ExerciseList = () => {
   return (
     <div>
       {exercises.map((exercise) => (
-        <h3>{exercise.name}</h3>
+        <ExerciseItem key={exercise.exerciseID} exercise={exercise} />
       ))}
     </div>
   )
