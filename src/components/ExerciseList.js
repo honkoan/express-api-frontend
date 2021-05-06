@@ -9,12 +9,12 @@ const ExerciseList = () => {
   useEffect(() => {
     fetch('https://honkoan-express.herokuapp.com/exercises')
       .then((res) => res.json())
-      .then((exercise) => setExercises(exercise))
+      .then((json) => setExercises(json.data))
   }, [])
   return (
     <div>
       {exercises.map((exercise) => (
-        <ExerciseItem key={exercise.exerciseID} exercise={exercise} />
+        <ExerciseItem {...exercise} key={exercise.exerciseID} />
       ))}
     </div>
   )

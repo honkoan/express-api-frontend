@@ -10,14 +10,14 @@ const ExerciseContainer = styled.div`
   padding: 5px 20px;
 `
 
-const ExerciseItem = ({ exercise }) => {
+const ExerciseItem = ({ name, category, targetMuscle, instructions }) => {
   return (
     <ExerciseContainer>
-      <h3>{exercise.name}</h3>
+      <h3>{name}</h3>
       <img src="https://via.placeholder.com/300x200" alt="new" />
-      <h4>{exercise.category}</h4>
-      <h4>{exercise.target_muscle}</h4>
-      <p>{exercise.instructions}</p>
+      <h4>{category}</h4>
+      <h4>{targetMuscle}</h4>
+      <p>{instructions}</p>
     </ExerciseContainer>
   )
 }

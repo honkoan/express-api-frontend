@@ -8,3 +8,5 @@ export const App = () => {
     <ExerciseList />
   )
 }
+
+export default App
