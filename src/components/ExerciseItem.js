@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const ExerciseContainer = styled.div`
@@ -11,13 +11,22 @@ const ExerciseContainer = styled.div`
 `
 
 const ExerciseItem = ({ name, category, targetMuscle, instructions }) => {
+
+  const [isActive, setActive] = useState(true)
+
+  const handleToggle = () => {
+    setActive(!isActive)
+  }
   return (
     <ExerciseContainer>
-      <h3>{name}</h3>
       <img src="https://via.placeholder.com/300x200" alt="new" />
-      <h4>{category}</h4>
-      <h4>{targetMuscle}</h4>
-      <p>{instructions}</p>
+      <h3>{name}</h3>
+      <button type="button" onClick={handleToggle}>Show more information</button>
+      <div className={isActive ? 'hidden' : 'display'}>
+        <h4>{category}</h4>
+        <h4>{targetMuscle}</h4>
+        <p>{instructions}</p>
+      </div>
     </ExerciseContainer>
   )
 }
