@@ -10,7 +10,7 @@ const ExerciseContainer = styled.div`
   padding: 5px 20px;
 `
 
-const ExerciseItem = ({ name, category, targetMuscle, instructions }) => {
+const ExerciseItem = ({ name, category, instructions }) => {
 
   const [isActive, setActive] = useState(true)
 
@@ -24,7 +24,6 @@ const ExerciseItem = ({ name, category, targetMuscle, instructions }) => {
       <button type="button" onClick={handleToggle}>Show more information</button>
       <div className={isActive ? 'hidden' : 'display'}>
         <h4>{category}</h4>
-        <h4>{targetMuscle}</h4>
         <p>{instructions}</p>
       </div>
     </ExerciseContainer>
